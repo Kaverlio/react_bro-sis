@@ -1,5 +1,5 @@
-import { Container, Button, Grid, Avatar } from '@material-ui/core';
-import React, { useContext, useState } from 'react'
+import { Container, Button, Grid} from '@material-ui/core';
+import React, { useContext} from 'react';
 import { useCollectionData } from "react-firebase-hooks/firestore"
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Context } from './../index';
@@ -9,7 +9,7 @@ import 'firebase/compat/firestore';
 
 const Chat = () => {
     const firestore = firebase.firestore();
-    const { auth, authstore } = useContext(Context);
+    const { auth } = useContext(Context);
     const [user] = useAuthState(auth);
     //  const [value, setValue] = useState("");
     const [messages] = useCollectionData(
